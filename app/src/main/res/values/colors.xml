@@ -5,4 +5,10 @@
     <color name="primaryDarkTransparent">#6d1976d2</color>
     <color name="accentTransparent">#9a0d47a1</color>
     <color name="colorAccent">#00b0ff</color>
+
+    <!--Button disable-->
+    <color name="grey">#667176</color>
+    <color name="colorPrimaryDisable">#b4cad4</color>
+    <color name="colorPrimaryDarkDisable">#5b6062</color>
+
 </resources>

@@ -86,7 +86,7 @@
             android:onClick="onGoNext"
             android:background="@drawable/button_selection"
             android:textColor="@android:color/white"
-
+            android:enabled="false"
     />
 
 </RelativeLayout>
