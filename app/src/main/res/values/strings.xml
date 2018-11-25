@@ -1,6 +1,30 @@
 <resources>
-    <string name="app_name">misApuntesClase</string>
+    <!--Login-->
+    <string name="app_name">u-tad app</string>
     <string name="mailLogin">mail</string>
     <string name="passwordLogin">password</string>
     <string name="txtBtnLogin">Login</string>
+
+    <!--Register 1-->
+    <string name="txtName">name</string>
+    <string name="txtSurname">1º surname</string>
+    <string name="txtSurname2">2º Surname</string>
+    <string name="txtAddress">Address</string>
+    <string name="txtPostalCode">Postal Code</string>
+    <string name="txtCity">City</string>
+    <string name="txtPhone">phone</string>
+
+    <!--Register 2-->
+    <string name="txtRbFemale">Female</string>
+    <string name="txtRbMale">Male</string>
+    <string name="titleGender">Gender</string>
+    <string name="txtDescrp">User description</string>
+    <string name="titleHobbies">Hobbies</string>
+        <string name="hobbie4">JavaScript</string>
+        <string name="hobbie3">Java</string>
+        <string name="hobbie2">Swift</string>
+        <string name="hobbie1">kotlin</string>
+    <string name="txtUserSurname2">Default 2º surname</string>
+    <string name="txtUserSurname">Default 1º Surname</string>
+    <string name="txtUserName">default name</string>
 </resources>

@@ -28,6 +28,8 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
+        myUserData = UserData.getInstance()
+
         txtPsw = findViewById(R.id.passwordLogin)
         txtEmail = findViewById(R.id.mailLogin)
         btnNext = findViewById(R.id.btnLogin)
@@ -39,7 +41,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     // function who change view to "registerActivity"
-    fun onGoNext(view: View){
+    fun onGoNext(view:View){
         Intent(this, RegisterActivity::class.java).apply {
             myUserData.email = txtEmail.text.toString()
             startActivity(this)

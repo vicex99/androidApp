@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ScrollView
+            android:id="@+id/scrollView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            <LinearLayout
+                    android:id="@+id/UserNameLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginEnd="0dp">
+
+                <ImageView
+                        android:id="@+id/imgProfile"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+
+                        android:layout_marginStart="40dp"
+                        android:layout_marginTop="26dp"
+                        />
+
+                <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="97dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="26dp"
+                        android:orientation="vertical">
+
+                    <TextView
+                            android:id="@+id/txtNameUser"
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+
+                            android:layout_marginTop="16dp"
+                            android:text="@string/txtUserName" />
+
+                    <TextView
+                            android:id="@+id/txtSurnameUser"
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+
+                            android:layout_marginTop="10dp"
+                            android:text="@string/txtUserSurname" />
+
+                    <TextView
+                            android:id="@+id/txtSurnameUser2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:layout_marginTop="10dp"
+                            android:text="@string/txtUserSurname2" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <EditText
+                    android:id="@+id/txtDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+
+                    android:layout_below="@+id/UserNameLayout"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginEnd="16dp"
+                    android:hint="@string/txtDescrp" />
+
+            <LinearLayout
+                    android:id="@+id/genderLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_below="@+id/txtDescription"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="17dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="-280dp"
+                    android:orientation="vertical">
+
+                <TextView
+                        android:layout_width="109dp"
+                        android:layout_height="53dp"
+                        android:scaleX="0.5"
+
+                        android:scaleY="0.5"
+                        android:text="@string/titleGender"
+                        app:autoSizeTextType="uniform" />
+
+                <RadioGroup
+                        android:id="@+id/rbtnGroupGender"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                    <RadioButton
+                            android:id="@+id/rbtnMale"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/txtRbMale" />
+
+                    <RadioButton
+                            android:id="@+id/rbtnFemale"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/txtRbFemale" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:id="@+id/hobbiesSelector"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_below="@+id/genderLayout"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="300dp"
+                    android:layout_marginEnd="16dp"
+                    android:orientation="vertical">
+
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="10dp"
+                        android:text="@string/titleHobbies"
+
+                        app:autoSizeTextType="uniform" />
+
+                <CheckBox
+                        android:id="@+id/checkComic"
+                        android:tag="hobb"
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:text="@string/hobbie1"
+                        app:autoSizeTextType="uniform" />
+
+                <CheckBox
+                        android:id="@+id/checkPeli"
+                        android:tag="hobb"
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:text="@string/hobbie2"
+                        app:autoSizeTextType="uniform" />
+
+                <CheckBox
+                        android:id="@+id/checkSeries"
+                        android:tag="hobb"
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:text="@string/hobbie3"
+                        app:autoSizeTextType="uniform" />
+
+                <CheckBox
+                        android:id="@+id/checkImagenes"
+                        android:tag="hobb"
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:text="@string/hobbie4"
+                        app:autoSizeTextType="uniform" />
+
+            </LinearLayout>
+
+            <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_below="@+id/hobbiesSelector"
+                    android:layout_marginEnd="38dp">
+
+                <android.support.design.widget.FloatingActionButton
+                        android:id="@+id/fab_visitdetail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:background="@drawable/button_selection"/>
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="ok"
+                        android:elevation="16dp"
+                        android:textColor="@android:color/white"
+                        android:textAppearance="?android:attr/textAppearanceMedium"/>
+            </FrameLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>
