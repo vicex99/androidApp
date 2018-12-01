@@ -1,6 +1,7 @@
 package com.utad.misapuntesclase.models
 
 import android.net.Uri
+import java.util.*
 
 /**
  * Clase que contendrá los datos del usuario en local mientras este en la aplicación
@@ -15,6 +16,7 @@ public class UserData(
     var postalCode: Int?,
     var city: String?,
     var phone: Int?,
+    var date: Date?,
 
     var imgUser: Uri?,
     var gender: Gender?,
@@ -31,7 +33,7 @@ public class UserData(
                 INSTANCE
                     ?: UserData(
                         "", "", "", null, 0, null, 0,
-                        null, Gender.female, null, null, null
+                        null, null, Gender.female, null, null, null
                     ).also { INSTANCE = it}
             }
         fun destroyInstance(){

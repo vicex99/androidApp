@@ -1,22 +1,29 @@
 package com.utad.misapuntesclase.fragments
 
 
+import android.annotation.SuppressLint
+import android.arch.lifecycle.Observer
 import android.content.Context
 import android.os.Bundle
 import android.support.design.widget.FloatingActionButton
 import android.support.v4.app.Fragment
+import android.text.format.DateFormat.format
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.Spinner
 import android.widget.TextView
 
 import com.utad.misapuntesclase.R
 import com.utad.misapuntesclase.models.UserData
+import java.text.SimpleDateFormat
+import java.util.*
 
 
-class Register1Fragment : Fragment() {
+class Register1Fragment : Fragment(){
+
 
     interface OnFragmentInteractionListener {
         fun onFragmentInteractionToSecond()
@@ -35,6 +42,9 @@ class Register1Fragment : Fragment() {
             Register1Fragment()
     }
 
+    // fragmentos
+    private lateinit var dateFragment: CalendaryDateFragment
+
     // datos para implementar en la pantalla
     private lateinit var myUserData: UserData
 
@@ -42,6 +52,7 @@ class Register1Fragment : Fragment() {
     private lateinit var tfName: TextView
     private lateinit var tfSurnameUser: TextView
     private lateinit var tfSurname2User: TextView
+    private lateinit var btnBithdate: Button
     private var tfAddress: TextView? = null
     private var tfPostalCode: TextView? = null
     private var tfCity: TextView? = null
@@ -54,13 +65,9 @@ class Register1Fragment : Fragment() {
     ): View? {
         return inflater.inflate(R.layout.fragment_register1, container, false).apply {
 
-            tfName = findViewById(R.id.txtName)
-            tfSurnameUser = findViewById(R.id.txtSurnameUser)
-            tfSurname2User = findViewById(R.id.txtSurname2User)
-            tfAddress = findViewById(R.id.txtAddress)
-            tfPostalCode = findViewById(R.id.txtPostalCode)
-            tfCity = findViewById(R.id.txtCity)
-            tfPhone = findViewById(R.id.intPhone)
+            setElements(this)
+
+            dateFragment = CalendaryDateFragment()
 
             myUserData = UserData.getInstance()
             this.findViewById<FloatingActionButton>(R.id.btnNext).setOnClickListener {
@@ -68,7 +75,26 @@ class Register1Fragment : Fragment() {
 
                 goSecond()
             }
+            this.findViewById<Button>(R.id.btnBithdate).setOnClickListener{
+                getAge()
+            }
         }
+    }
+
+    /**
+     * Conect element's view with variables
+     *
+     * @param - the view who you like connect
+     */
+    fun  setElements(view: View){
+        tfName = view.findViewById(R.id.txtName)
+        tfSurnameUser = view.findViewById(R.id.txtSurnameUser)
+        tfSurname2User = view.findViewById(R.id.txtSurname2User)
+        btnBithdate = view.findViewById(R.id.btnBithdate)
+        tfAddress = view.findViewById(R.id.txtAddress)
+        tfPostalCode = view.findViewById(R.id.txtPostalCode)
+        tfCity = view.findViewById(R.id.txtCity)
+        tfPhone = view.findViewById(R.id.intPhone)
     }
 
     /**
@@ -88,6 +114,18 @@ class Register1Fragment : Fragment() {
             myUserData.phone = Integer.parseInt(tfPhone?.text.toString())
 
         mCallback?.onFragmentInteractionToSecond()
+    }
+
+
+    @SuppressLint("SetTextI18n")
+    fun getAge() {
+        dateFragment.show(childFragmentManager, "date")
+        val df = SimpleDateFormat("dd MM yyyy")
+        Log.d("qqqqqqq", myUserData.date.toString())
+
+        btnBithdate.text = "${myUserData.date.toString().subSequence(8, 10)} " +
+                "${myUserData.date.toString().subSequence(4, 7)} " +
+                "${myUserData.date.toString().subSequence(24, 28)}"
     }
 
     override fun onAttach(context: Context) {

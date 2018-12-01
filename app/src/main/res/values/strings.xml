@@ -20,11 +20,15 @@
     <string name="titleGender">Gender</string>
     <string name="txtDescrp">User description</string>
     <string name="titleHobbies">Hobbies</string>
-        <string name="hobbie4">JavaScript</string>
-        <string name="hobbie3">Java</string>
-        <string name="hobbie2">Swift</string>
-        <string name="hobbie1">kotlin</string>
+    <string name="hobbie4">JavaScript</string>
+    <string name="hobbie3">Java</string>
+    <string name="hobbie2">Swift</string>
+    <string name="hobbie1">kotlin</string>
     <string name="txtUserSurname2">Default 2º surname</string>
     <string name="txtUserSurname">Default 1º Surname</string>
     <string name="txtUserName">default name</string>
+    <string name="txtbirthdate">BIRTHDATE</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

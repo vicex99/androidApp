@@ -37,16 +37,32 @@
                     android:id="@+id/txtSurnameUser"
                     android:layout_width="152.5dp"
                     android:layout_height="40dp"
+                    android:layout_below="@+id/txtName"
                     android:layout_marginTop="20dp"
                     android:hint="@string/txtSurname"
-                    android:tag="myEditText"
-                    android:layout_below="@+id/txtName"/>
+                    android:tag="myEditText"/>
+
+
+            <Button
+                    android:id="@+id/btnBithdate"
+                    android:layout_width="152.5dp"
+                    android:layout_height="40dp"
+
+                    android:layout_below="@id/txtSurnameUser"
+                    android:layout_marginTop="20dp"
+
+                    android:background="@drawable/button_selection"
+
+                    android:text="@string/txtbirthdate"
+                    android:textColor="@android:color/white"
+                    android:gravity="center"
+            />
 
             <EditText
                     android:id="@+id/txtSurname2User"
                     android:layout_width="152.5dp"
                     android:layout_height="40dp"
-                    android:layout_marginLeft="165dp"
+                    android:layout_marginEnd="165dp"
                     android:layout_marginTop="80dp"
                     android:hint="@string/txtSurname2"
                     android:tag="myEditText"
@@ -77,7 +93,7 @@
                     android:id="@+id/txtCity"
                     android:layout_width="155dp"
                     android:layout_height="40dp"
-                    android:layout_marginLeft="165dp"
+                    android:layout_marginStart="165dp"
                     android:layout_marginTop="20dp"
                     android:hint="@string/txtCity"
                     android:tag="myEditText"
@@ -87,7 +103,7 @@
                     android:id="@+id/intPhone"
                     android:layout_width="155dp"
                     android:layout_height="40dp"
-                    android:layout_marginRight="165dp"
+                    android:layout_marginEnd="165dp"
                     android:hint="@string/txtPhone"
                     android:tag="myEditText"
                     android:layout_marginTop="20dp"

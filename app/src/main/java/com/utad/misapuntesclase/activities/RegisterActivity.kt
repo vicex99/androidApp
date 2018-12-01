@@ -71,7 +71,6 @@ class RegisterActivity : AppCompatActivity(), Register1Fragment.OnFragmentIntera
 
         }
         startActivity(intent)
-
     }
 }
 
