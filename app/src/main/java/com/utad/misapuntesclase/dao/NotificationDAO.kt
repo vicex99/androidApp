@@ -3,15 +3,15 @@ package com.utad.misapuntesclase.dao
 import android.app.Notification
 import android.arch.lifecycle.LiveData
 import android.arch.persistence.room.*
+import com.utad.misapuntesclase.modelsEntity.Notifications
 
 @Dao
 interface NotificationDAO {
-    //TODO("changeData")
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insert(classData: Notification): Long
+    fun insertOne(classData: Notifications): Long
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insert(classData: List<Notification>): LongArray
+    fun insert(classData: List<Notifications>): LongArray
 
 
     @Update

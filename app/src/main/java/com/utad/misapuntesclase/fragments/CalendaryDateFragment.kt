@@ -34,7 +34,6 @@ class CalendaryDateFragment : DatePickerDialog.OnDateSetListener, DialogFragment
         val df = SimpleDateFormat("dd MM yyyy")
         val date = df.parse("$day $month $year")
 
-        myUserData.date = date
         selectedDate.value =  date
     }
 }

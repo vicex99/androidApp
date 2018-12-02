@@ -3,6 +3,7 @@ package com.utad.misapuntesclase.modelsEntity
 import android.net.Uri
 import java.util.*
 import android.arch.persistence.room.Entity
+import android.arch.persistence.room.PrimaryKey
 
 /**
  * Clase que contendrá los datos del usuario en local mientras este en la aplicación
@@ -26,6 +27,9 @@ public class UserData(
     var description: String?,
     var email: String?,
     var hobbies: Array<String>? ){
+
+    @PrimaryKey(autoGenerate = false)
+    var id: Int? = null
 
     companion object {
         @Volatile

@@ -115,8 +115,8 @@ class Register2Fragment : Fragment() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if (resultCode == Activity.RESULT_OK && requestCode == PICK_IMAGE) {
             data?.data?.let {imageUri ->
-                foto_gallery.setImageURI(imageUri)
                 myUserData.imgUser = imageUri
+                foto_gallery.setImageURI(imageUri)
             }
         }
     }
