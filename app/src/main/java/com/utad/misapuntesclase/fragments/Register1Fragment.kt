@@ -4,7 +4,9 @@ package com.utad.misapuntesclase.fragments
 import android.annotation.SuppressLint
 import android.arch.lifecycle.Observer
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
+import android.provider.MediaStore
 import android.support.design.widget.FloatingActionButton
 import android.support.v4.app.Fragment
 import android.util.Log
@@ -118,14 +120,11 @@ class Register1Fragment : Fragment(){
     @SuppressLint("SetTextI18n")
     fun getAge() {
         dateFragment.show(fragmentManager, "date")
-        Log.d("qqqqqqqUserData", myUserData.date.toString())
 
         dateFragment.selectedDate.observe(this, Observer <Date> {date ->
-            Log.d("qqqqqqqbbbbbbb", date.toString())
             btnBithdate.text = "${date.toString().subSequence(8, 10)} " +
                     "${date.toString().subSequence(4, 7)} " +
                     "${date.toString().subSequence(24, 28)}"
-            Log.d("qqqqqqqUserData2", myUserData.date.toString())
 
         })
     }

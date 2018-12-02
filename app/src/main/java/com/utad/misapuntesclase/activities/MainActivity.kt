@@ -10,6 +10,7 @@ import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import android.widget.FrameLayout
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import com.utad.misapuntesclase.R
@@ -38,7 +39,7 @@ class MainActivity : AppCompatActivity(), SubjectAdapter.OnClickedItemListener, 
 
     override fun onItemSelected(community: Community) {
         Toast.makeText(this, "Falta hacer dialog", Toast.LENGTH_SHORT).show()
-        var bundle = Bundle()
+        val bundle = Bundle()
         bundle.putString(SubjectDialog.NAME, community.name)
         bundle.putString(SubjectDialog.BELOW_NAME, community.cordinator)
         bundle.putInt(SubjectDialog.IMAGE, community.imageID)
@@ -52,7 +53,7 @@ class MainActivity : AppCompatActivity(), SubjectAdapter.OnClickedItemListener, 
     // Here I implement the interface from the TeacherAdapter, so when you click on a item of that recyclerView, the dialog opens up
     override fun onItemSelected(teacher: Teacher) {
         Toast.makeText(this, "Falta hacer dialog", Toast.LENGTH_SHORT).show()
-        var bundle = Bundle()
+        val bundle = Bundle()
         bundle.putString(SubjectDialog.NAME, teacher.name)
         bundle.putString(SubjectDialog.BELOW_NAME, teacher.surname)
         bundle.putInt(SubjectDialog.IMAGE, teacher.imageID)
@@ -82,9 +83,10 @@ class MainActivity : AppCompatActivity(), SubjectAdapter.OnClickedItemListener, 
     private lateinit var nv: NavigationView
 
     // Create values of view navigation header
-    private var name: TextView? = null
-    private var surname: TextView? = null
-    private var mail: TextView? = null
+    private lateinit var name: TextView
+    private lateinit var surname: TextView
+    private lateinit var mail: TextView
+    private lateinit var imgUser: ImageView
 
     private lateinit var myUserData: UserData
 
@@ -131,11 +133,11 @@ class MainActivity : AppCompatActivity(), SubjectAdapter.OnClickedItemListener, 
             this.inflate(R.menu.dots_menu, menu).apply {
                 // Set serializable
                 myUserData = UserData.getInstance()
-
                 // setDataNavHeader
                 name = findViewById(R.id.txtName)
                 surname = findViewById(R.id.txtSurname)
                 mail = findViewById(R.id.txtEmail)
+                imgUser = findViewById(R.id.imgUser)
 
                 setData()
             }
@@ -148,13 +150,18 @@ class MainActivity : AppCompatActivity(), SubjectAdapter.OnClickedItemListener, 
     private fun setData() {
         val surnames: String = myUserData.surname1 + " " + myUserData.surname2
 
-        name?.text = myUserData.name
-        surname?.text = surnames
-        mail?.text = myUserData.email
+        name.text = myUserData.name
+        surname.text = surnames
+        mail.text = myUserData.email
+        myUserData.imgUser?.let {
+            imgUser.setImageURI(myUserData.imgUser)
+        } ?: kotlin.run {
+            imgUser.setImageResource(R.drawable.ic_user_example)
+        }
     }
 
     //I always create a function that set the listeners, It helps in organization
-    internal fun setListeners(){
+    private fun setListeners(){
 
         //In this listener sets what the navigation drawer options do
         nv.setNavigationItemSelectedListener { item ->

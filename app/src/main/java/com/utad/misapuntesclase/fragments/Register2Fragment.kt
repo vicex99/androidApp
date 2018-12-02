@@ -1,11 +1,16 @@
 package com.utad.misapuntesclase.fragments
 
 
+import android.app.Activity
 import android.content.Context
+import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.provider.MediaStore
 import android.support.design.widget.FloatingActionButton
+import android.support.v4.app.ActivityCompat.startActivityForResult
 import android.support.v4.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -44,10 +49,9 @@ class Register2Fragment : Fragment() {
 
     // Image variables
     private val PICK_IMAGE = 100
-    private var imageUri: Uri? = null
 
     // view elements
-    private var foto_gallery: ImageView? = null
+    private lateinit var foto_gallery: ImageView
     private lateinit var txtName: TextView
     private lateinit var txtSurname1: TextView
     private lateinit var txtSurname2: TextView
@@ -55,7 +59,7 @@ class Register2Fragment : Fragment() {
 
     //TOD: coger estos valores en pantalla
     private lateinit var rbGenderM: RadioButton
-    //    private val checkBHobbies: Array<TextView>? = null
+    private val checkBHobbies: Array<TextView>? = null
 
 
     override fun onCreateView(
@@ -78,6 +82,10 @@ class Register2Fragment : Fragment() {
                 setBeforeEnd()
                 mCallback?.onFragmentInteractionEnd()
             }
+
+            findViewById<ImageView>(R.id.imgProfile).setOnClickListener {
+                openGallery()
+            }
         }
     }
 
@@ -90,6 +98,7 @@ class Register2Fragment : Fragment() {
         txtName.text = myUserData.name
         txtSurname1.text = myUserData.surname1
         txtSurname2.text = myUserData.surname2
+        foto_gallery.setImageResource(R.drawable.ic_user_example)
 
     }
 
@@ -98,9 +107,22 @@ class Register2Fragment : Fragment() {
      */
     private fun setBeforeEnd(){
         myUserData.description = tfDescription?.text.toString()
-
     }
 
+
+    private fun openGallery() {
+        val gallery = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI)
+        startActivityForResult(gallery, PICK_IMAGE)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        if (resultCode == Activity.RESULT_OK && requestCode == PICK_IMAGE) {
+            data?.data?.let {imageUri ->
+                foto_gallery.setImageURI(imageUri)
+                myUserData.imgUser = imageUri
+            }
+        }
+    }
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
