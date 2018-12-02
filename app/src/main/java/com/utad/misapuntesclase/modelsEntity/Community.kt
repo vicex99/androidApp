@@ -1,5 +1,8 @@
-package io.github.alvarosanzrodrigo.fragmentlisttask3.Models
+package com.utad.misapuntesclase.modelsEntity
 
+import android.arch.persistence.room.Entity
+
+@Entity(tableName = "Community")
 class Community(
     var name: String,
     var imageID: Int,

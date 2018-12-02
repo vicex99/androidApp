@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import com.utad.misapuntesclase.R
-import io.github.alvarosanzrodrigo.fragmentlisttask3.Models.RecyclerViewData
+import com.utad.misapuntesclase.modelsEntity.RecyclerViewData
 
 class DialogAdapter(var items: ArrayList<RecyclerViewData>) : RecyclerView.Adapter<DialogAdapter.MyViewHolder>() {
 

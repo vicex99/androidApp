@@ -8,7 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import com.utad.misapuntesclase.R
-import io.github.alvarosanzrodrigo.fragmentlisttask3.Models.Notifications
+import com.utad.misapuntesclase.modelsEntity.Notifications
 import java.util.*
 
 

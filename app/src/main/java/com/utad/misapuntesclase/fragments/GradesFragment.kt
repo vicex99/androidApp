@@ -9,8 +9,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.utad.misapuntesclase.R
-import io.github.alvarosanzrodrigo.fragmentlisttask3.Adapters.GradeAdapter
-import io.github.alvarosanzrodrigo.fragmentlisttask3.Models.Grades
+import com.utad.misapuntesclase.modelsEntity.Grades
+import com.utad.misapuntesclase.adapters.GradeAdapter
 import org.jetbrains.anko.doAsync
 import java.util.*
 

@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import com.utad.misapuntesclase.R
-import io.github.alvarosanzrodrigo.fragmentlisttask3.Models.Teacher
+import com.utad.misapuntesclase.modelsEntity.Teacher
 
 
 class TeacherAdapter(var items: ArrayList<Teacher>) : RecyclerView.Adapter<TeacherAdapter.MyViewHolder>() {

@@ -8,7 +8,7 @@ import android.support.v4.app.DialogFragment
 import android.util.Log
 import android.widget.DatePicker
 
-import com.utad.misapuntesclase.models.UserData
+import com.utad.misapuntesclase.modelsEntity.UserData
 import java.text.SimpleDateFormat
 import java.util.*
 

@@ -4,9 +4,7 @@ package com.utad.misapuntesclase.fragments
 import android.annotation.SuppressLint
 import android.arch.lifecycle.Observer
 import android.content.Context
-import android.content.Intent
 import android.os.Bundle
-import android.provider.MediaStore
 import android.support.design.widget.FloatingActionButton
 import android.support.v4.app.Fragment
 import android.util.Log
@@ -18,7 +16,7 @@ import android.widget.Spinner
 import android.widget.TextView
 
 import com.utad.misapuntesclase.R
-import com.utad.misapuntesclase.models.UserData
+import com.utad.misapuntesclase.modelsEntity.UserData
 import java.util.*
 
 

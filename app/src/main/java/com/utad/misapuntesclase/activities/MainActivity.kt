@@ -19,9 +19,11 @@ import com.utad.misapuntesclase.adapters.NotificationsAdapter
 import com.utad.misapuntesclase.adapters.SubjectAdapter
 import com.utad.misapuntesclase.adapters.TeacherAdapter
 import com.utad.misapuntesclase.fragments.*
-import com.utad.misapuntesclase.models.UserData
-import io.github.alvarosanzrodrigo.fragmentlisttask3.Adapters.GradeAdapter
-import io.github.alvarosanzrodrigo.fragmentlisttask3.Models.*
+import com.utad.misapuntesclase.modelsEntity.*
+import com.utad.misapuntesclase.modelsEntity.UserData
+import com.utad.misapuntesclase.adapters.GradeAdapter
+import com.utad.misapuntesclase.modelsEntity.Community
+import com.utad.misapuntesclase.modelsEntity.Subject
 
 /**
  * donde se verán el menu desplegable y las listas
@@ -29,6 +31,8 @@ import io.github.alvarosanzrodrigo.fragmentlisttask3.Models.*
 
 class MainActivity : AppCompatActivity(), SubjectAdapter.OnClickedItemListener, TeacherAdapter.OnClickedItemListener, CommunityAdapter.OnClickedItemListener, GradeAdapter.OnClickedItemListener,
     NotificationsAdapter.OnClickedItemListener {
+
+
     override fun onItemSelected(notifications: Notifications) {
         Toast.makeText(this, "User: " + notifications.username, Toast.LENGTH_SHORT).show()
     }
@@ -38,7 +42,6 @@ class MainActivity : AppCompatActivity(), SubjectAdapter.OnClickedItemListener, 
     }
 
     override fun onItemSelected(community: Community) {
-        Toast.makeText(this, "Falta hacer dialog", Toast.LENGTH_SHORT).show()
         val bundle = Bundle()
         bundle.putString(SubjectDialog.NAME, community.name)
         bundle.putString(SubjectDialog.BELOW_NAME, community.cordinator)
@@ -52,7 +55,6 @@ class MainActivity : AppCompatActivity(), SubjectAdapter.OnClickedItemListener, 
 
     // Here I implement the interface from the TeacherAdapter, so when you click on a item of that recyclerView, the dialog opens up
     override fun onItemSelected(teacher: Teacher) {
-        Toast.makeText(this, "Falta hacer dialog", Toast.LENGTH_SHORT).show()
         val bundle = Bundle()
         bundle.putString(SubjectDialog.NAME, teacher.name)
         bundle.putString(SubjectDialog.BELOW_NAME, teacher.surname)
@@ -67,7 +69,7 @@ class MainActivity : AppCompatActivity(), SubjectAdapter.OnClickedItemListener, 
 
     // Here I implement the interface from the SubjectAdapter, so when you click on a item of that recyclerView, the dialog opens up
     override fun onItemSelected(subject: Subject) {
-        var bundle = Bundle()
+        val bundle = Bundle()
         bundle.putString(SubjectDialog.NAME, subject.name)
         bundle.putString(SubjectDialog.BELOW_NAME, "2019")
         bundle.putInt(SubjectDialog.IMAGE, subject.imageID)

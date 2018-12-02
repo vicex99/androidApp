@@ -1,13 +1,16 @@
-package com.utad.misapuntesclase.models
+package com.utad.misapuntesclase.modelsEntity
 
 import android.net.Uri
 import java.util.*
+import android.arch.persistence.room.Entity
 
 /**
  * Clase que contendrá los datos del usuario en local mientras este en la aplicación
  *
  * es accesible desde cualquier sitio
  */
+
+@Entity(tableName = "user")
 public class UserData(
     var name: String,
     var surname1: String,

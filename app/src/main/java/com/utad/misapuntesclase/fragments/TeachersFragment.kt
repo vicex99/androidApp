@@ -10,8 +10,8 @@ import android.view.View
 import android.view.ViewGroup
 import com.utad.misapuntesclase.R
 import com.utad.misapuntesclase.adapters.TeacherAdapter
-import io.github.alvarosanzrodrigo.fragmentlisttask3.Models.RecyclerViewData
-import io.github.alvarosanzrodrigo.fragmentlisttask3.Models.Teacher
+import com.utad.misapuntesclase.modelsEntity.RecyclerViewData
+import com.utad.misapuntesclase.modelsEntity.Teacher
 import org.jetbrains.anko.doAsync
 
 

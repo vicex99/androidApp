@@ -1,5 +1,8 @@
-package io.github.alvarosanzrodrigo.fragmentlisttask3.Models
+package com.utad.misapuntesclase.modelsEntity
 
+import android.arch.persistence.room.Entity
+
+@Entity(tableName = "Teacher")
 class Teacher(
     var imageID: Int,
     var name: String,

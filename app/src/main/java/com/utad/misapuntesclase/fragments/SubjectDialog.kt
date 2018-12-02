@@ -15,7 +15,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.utad.misapuntesclase.R
 import com.utad.misapuntesclase.adapters.DialogAdapter
-import io.github.alvarosanzrodrigo.fragmentlisttask3.Models.RecyclerViewData
+import com.utad.misapuntesclase.modelsEntity.RecyclerViewData
 
 class SubjectDialog : DialogFragment() {
     companion object {

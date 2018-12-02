@@ -1,8 +1,10 @@
-package io.github.alvarosanzrodrigo.fragmentlisttask3.Models
+package com.utad.misapuntesclase.modelsEntity
 
-import android.graphics.drawable.Drawable
-//Well, this is an object.
+import android.arch.persistence.room.Entity
+
+@Entity(tableName = "Subject")
 class Subject(
+    var id: Int,
     var imageID: Int,
     var name: String,
     var description: String,

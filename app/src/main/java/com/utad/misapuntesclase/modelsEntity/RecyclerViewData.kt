@@ -1,4 +1,4 @@
-package io.github.alvarosanzrodrigo.fragmentlisttask3.Models
+package com.utad.misapuntesclase.modelsEntity
 
 import android.os.Parcel
 import android.os.Parcelable

@@ -4,13 +4,10 @@ package com.utad.misapuntesclase.fragments
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
 import android.support.design.widget.FloatingActionButton
-import android.support.v4.app.ActivityCompat.startActivityForResult
 import android.support.v4.app.Fragment
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -19,7 +16,7 @@ import android.widget.RadioButton
 import android.widget.TextView
 
 import com.utad.misapuntesclase.R
-import com.utad.misapuntesclase.models.UserData
+import com.utad.misapuntesclase.modelsEntity.UserData
 
 class Register2Fragment : Fragment() {
 

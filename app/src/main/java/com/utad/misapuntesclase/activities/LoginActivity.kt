@@ -11,7 +11,7 @@ import android.util.Patterns
 import android.widget.Button
 
 import com.utad.misapuntesclase.R
-import com.utad.misapuntesclase.models.UserData
+import com.utad.misapuntesclase.modelsEntity.UserData
 
 class LoginActivity : AppCompatActivity() {
 

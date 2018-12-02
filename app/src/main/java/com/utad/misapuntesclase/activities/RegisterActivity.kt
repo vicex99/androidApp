@@ -7,7 +7,7 @@ import android.view.View
 import com.utad.misapuntesclase.R
 import com.utad.misapuntesclase.fragments.Register1Fragment
 import com.utad.misapuntesclase.fragments.Register2Fragment
-import com.utad.misapuntesclase.models.UserData
+import com.utad.misapuntesclase.modelsEntity.UserData
 
 class RegisterActivity : AppCompatActivity(), Register1Fragment.OnFragmentInteractionListener, Register2Fragment.OnFragmentInteractionListener {
 

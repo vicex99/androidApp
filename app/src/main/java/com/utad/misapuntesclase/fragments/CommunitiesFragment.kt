@@ -10,8 +10,8 @@ import android.view.View
 import android.view.ViewGroup
 import com.utad.misapuntesclase.R
 import com.utad.misapuntesclase.adapters.CommunityAdapter
-import io.github.alvarosanzrodrigo.fragmentlisttask3.Models.Community
-import io.github.alvarosanzrodrigo.fragmentlisttask3.Models.RecyclerViewData
+import com.utad.misapuntesclase.modelsEntity.Community
+import com.utad.misapuntesclase.modelsEntity.RecyclerViewData
 import org.jetbrains.anko.doAsync
 
 
@@ -54,14 +54,22 @@ class CommunitiesFragment : Fragment() {
             recyclerViewDataArrayList.add(RecyclerViewData("Contest 1", "Eventos"))
             recyclerViewDataArrayList.add(RecyclerViewData("U-tad Manager", "Current Project"))
             recyclerViewDataArrayList.add(RecyclerViewData("9.9", "Rating"))
-            items.add(Community("Programming",
-                R.drawable.ic_interfaces, "A community for programming in general, what ever you want to learn you can do it here.", "Daniel The Tall One", recyclerViewDataArrayList))
-            items.add(Community("Mobile",
-                R.drawable.ic_mobile_development, "A community for Android and iOs, what ever you want to learn you can do it here.", "Daniel The Tall One", recyclerViewDataArrayList))
-            items.add(Community("Virtual Reality",
-                R.drawable.ic_virtual_reality, "A community for virtual reality programming , what ever you want to learn you can do it here.", "Daniel The Tall One", recyclerViewDataArrayList))
-            items.add(Community("Videogames",
-                R.drawable.ic_videogames, "A community for programming videogames, and games discussing, what ever you want to learn you can do it here.", "Daniel The Tall One", recyclerViewDataArrayList))
+            items.add(
+                Community("Programming",
+                R.drawable.ic_interfaces, "A community for programming in general, what ever you want to learn you can do it here.", "Daniel The Tall One", recyclerViewDataArrayList)
+            )
+            items.add(
+                Community("Mobile",
+                R.drawable.ic_mobile_development, "A community for Android and iOs, what ever you want to learn you can do it here.", "Daniel The Tall One", recyclerViewDataArrayList)
+            )
+            items.add(
+                Community("Virtual Reality",
+                R.drawable.ic_virtual_reality, "A community for virtual reality programming , what ever you want to learn you can do it here.", "Daniel The Tall One", recyclerViewDataArrayList)
+            )
+            items.add(
+                Community("Videogames",
+                R.drawable.ic_videogames, "A community for programming videogames, and games discussing, what ever you want to learn you can do it here.", "Daniel The Tall One", recyclerViewDataArrayList)
+            )
         }
     }
 }

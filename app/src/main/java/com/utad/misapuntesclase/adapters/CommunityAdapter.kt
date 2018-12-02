@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import com.utad.misapuntesclase.R
-import io.github.alvarosanzrodrigo.fragmentlisttask3.Models.Community
+import com.utad.misapuntesclase.modelsEntity.Community
 
 class CommunityAdapter(var items: ArrayList<Community>) : RecyclerView.Adapter<CommunityAdapter.MyViewHolder>() {
     var mCallBack: OnClickedItemListener? = null

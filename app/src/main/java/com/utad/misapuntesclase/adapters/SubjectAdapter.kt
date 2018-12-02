@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import com.utad.misapuntesclase.R
-import io.github.alvarosanzrodrigo.fragmentlisttask3.Models.Subject
+import com.utad.misapuntesclase.modelsEntity.Subject
 
 
 class SubjectAdapter(var items: ArrayList<Subject>) : RecyclerView.Adapter<SubjectAdapter.MyViewHolder>() {

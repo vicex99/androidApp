@@ -1,21 +1,15 @@
-package io.github.alvarosanzrodrigo.fragmentlisttask3.Adapters
+package com.utad.misapuntesclase.adapters
 
 
 import android.annotation.SuppressLint
-import android.app.Application
 import android.content.Context
-import android.support.v4.content.ContextCompat
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
-import android.view.TextureView
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 import com.utad.misapuntesclase.R
-import io.github.alvarosanzrodrigo.fragmentlisttask3.Models.Grades
-import io.github.alvarosanzrodrigo.fragmentlisttask3.Models.Subject
-import io.github.alvarosanzrodrigo.fragmentlisttask3.Models.Teacher
+import com.utad.misapuntesclase.modelsEntity.Grades
 
 import java.util.*
 
