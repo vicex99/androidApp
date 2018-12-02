@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="horizontal"
+              android:padding="14dp"
+        >
+
+    <TextView
+            android:id="@+id/grade_rv_item_date"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:text="date"
+            android:gravity="center"
+            android:singleLine="true"
+            android:ellipsize="marquee"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:scrollHorizontally="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true"/>
+    <View
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@android:color/darker_gray"/>
+    <LinearLayout
+            android:padding="14dp"
+            android:layout_width="190dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+        <TextView
+                android:id="@+id/grade_rv_item_subject"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="subject"
+                android:gravity="center"/>
+        <View
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray"/>
+        <TextView
+                android:id="@+id/grade_rv_item_task"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="task"
+                android:gravity="center"/>
+    </LinearLayout>
+
+    <View
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@android:color/darker_gray"/>
+
+    <TextView
+            android:id="@+id/grade_rv_item_grade"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:text="grade"/>
+</LinearLayout>

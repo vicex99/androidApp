@@ -7,7 +7,6 @@ import android.content.Context
 import android.os.Bundle
 import android.support.design.widget.FloatingActionButton
 import android.support.v4.app.Fragment
-import android.text.format.DateFormat.format
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -18,7 +17,6 @@ import android.widget.TextView
 
 import com.utad.misapuntesclase.R
 import com.utad.misapuntesclase.models.UserData
-import java.text.SimpleDateFormat
 import java.util.*
 
 
@@ -119,13 +117,17 @@ class Register1Fragment : Fragment(){
 
     @SuppressLint("SetTextI18n")
     fun getAge() {
-        dateFragment.show(childFragmentManager, "date")
-        val df = SimpleDateFormat("dd MM yyyy")
-        Log.d("qqqqqqq", myUserData.date.toString())
+        dateFragment.show(fragmentManager, "date")
+        Log.d("qqqqqqqUserData", myUserData.date.toString())
 
-        btnBithdate.text = "${myUserData.date.toString().subSequence(8, 10)} " +
-                "${myUserData.date.toString().subSequence(4, 7)} " +
-                "${myUserData.date.toString().subSequence(24, 28)}"
+        dateFragment.selectedDate.observe(this, Observer <Date> {date ->
+            Log.d("qqqqqqqbbbbbbb", date.toString())
+            btnBithdate.text = "${date.toString().subSequence(8, 10)} " +
+                    "${date.toString().subSequence(4, 7)} " +
+                    "${date.toString().subSequence(24, 28)}"
+            Log.d("qqqqqqqUserData2", myUserData.date.toString())
+
+        })
     }
 
     override fun onAttach(context: Context) {

@@ -5,6 +5,7 @@
     <string name="passwordLogin">password</string>
     <string name="txtBtnLogin">Login</string>
 
+
     <!--Register 1-->
     <string name="txtName">name</string>
     <string name="txtSurname">1º surname</string>
@@ -28,6 +29,10 @@
     <string name="txtUserSurname">Default 1º Surname</string>
     <string name="txtUserName">default name</string>
     <string name="txtbirthdate">BIRTHDATE</string>
+
+    <!--Main-->
+    <string name="Open">Open</string>
+    <string name="Close">Close</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
