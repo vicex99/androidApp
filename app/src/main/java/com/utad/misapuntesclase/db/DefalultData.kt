@@ -1,6 +1,5 @@
 package com.utad.misapuntesclase.db
 
-import android.app.Notification
 import com.utad.misapuntesclase.R
 import com.utad.misapuntesclase.modelsEntity.*
 import java.util.*

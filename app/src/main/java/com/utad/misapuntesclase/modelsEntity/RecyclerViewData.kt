@@ -4,6 +4,7 @@ import android.arch.persistence.room.Entity
 import android.os.Parcel
 import android.os.Parcelable
 
+@Entity
 class RecyclerViewData(var data: String, var name: String) : Parcelable{
     constructor(parcel: Parcel) : this(
         parcel.readString(),
