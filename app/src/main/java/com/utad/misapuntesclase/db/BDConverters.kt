@@ -20,7 +20,7 @@ object RecyclerViewConverter {
     @JvmStatic
     fun toRecyclerView(menuStamp: String?): RecyclerView? {
         menuStamp?.let {
-            return menuStamp
+//            return menuStamp
         } ?: kotlin.run { return null }
     }
 
