@@ -67,9 +67,11 @@ dependencies {
     kapt "android.arch.persistence.room:compiler:$room_version"
 
     // Retrofit + RX
-    implementation 'com.squareup.retrofit2:retrofit:'
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
     implementation "com.squareup.retrofit2:converter-moshi:$retrofit_version"
     implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version"
+
+    implementation 'com.squareup.retrofit2:converter-gson:2.1.0'
 
     // RXJava functional programming dependency
     implementation 'com.squareup.retrofit2:adapter-rxjava2:2.4.0'

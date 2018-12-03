@@ -9,8 +9,7 @@ class RecyclerViewData(var data: String, var name: String) : Parcelable{
     constructor(parcel: Parcel) : this(
         parcel.readString(),
         parcel.readString()
-    ) {
-    }
+    )
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeString(data)

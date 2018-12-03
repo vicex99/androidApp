@@ -19,6 +19,8 @@ import javax.security.auth.Subject
                     UserData::class
                     ],
             version = 1)
+
+@TypeConverters(DateConverter::class, RecyclerViewConverter::class)
 abstract class AppDatabase: RoomDatabase() {
 
     abstract fun ClassroomDao(): ClassroomDAO
