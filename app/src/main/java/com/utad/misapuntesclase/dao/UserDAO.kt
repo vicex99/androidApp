@@ -7,23 +7,21 @@ import com.utad.misapuntesclase.modelsEntity.UserData
 @Dao
 interface UserDAO {
 
-    //TODO("changeData")
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(classData: UserData): Long
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insert(classData: List<UserData>): LongArray
+    fun insert(classData: List<UserData>): List<Long>
 
+    // TODO: set data when finnish the register
+    @Query("SELECT * from user")
+    fun getAll(): LiveData<UserData>
 
-    @Update
+    @Update(onConflict = OnConflictStrategy.REPLACE)
     fun update(classData: UserData): Int
 
     //TODO: clear data with logout
     @Query("DELETE FROM user")
     fun deleteAll()
-
-    // TODO: set data when finnish the register
-    @Query("SELECT * from user")
-    fun getAllClass(): LiveData<List<UserData>>
 
 }

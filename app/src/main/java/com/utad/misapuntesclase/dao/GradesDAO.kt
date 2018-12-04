@@ -14,14 +14,14 @@ interface GradesDAO {
     fun insert(classData: List<Grades>): LongArray
 
 
+    @Query("SELECT * from grades ORDER BY subject ASC")
+    fun getAll(): LiveData<List<Grades>>
+
+
     @Update
     fun update(classData: Grades): Int
 
-
     @Query("DELETE FROM Subject")
     fun deleteAll()
-
-    @Query("SELECT * from grades ORDER BY subject ASC")
-    fun getAllClass(): LiveData<List<Grades>>
 
 }

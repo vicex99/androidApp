@@ -12,6 +12,7 @@ import com.utad.misapuntesclase.R
 import com.utad.misapuntesclase.adapters.SubjectAdapter
 import com.utad.misapuntesclase.modelsEntity.RecyclerViewData
 import com.utad.misapuntesclase.modelsEntity.Subject
+import com.utad.misapuntesclase.repository.BDRepository
 import org.jetbrains.anko.doAsync
 
 
@@ -20,6 +21,8 @@ class SubjectFragment : Fragment() {
     private lateinit var viewAdapter: RecyclerView.Adapter<*>
     private lateinit var viewManager: RecyclerView.LayoutManager
     var items: ArrayList<Subject> = ArrayList()
+
+    private lateinit var mRepo: BDRepository
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

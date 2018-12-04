@@ -48,16 +48,7 @@ class TeachersFragment : Fragment() {
         //I'm using Anko to do asynk tasks
         doAsync {
 
-            var recyclerViewDataArrayList: ArrayList<RecyclerViewData> = ArrayList()
-            recyclerViewDataArrayList.add(RecyclerViewData("asignatura 1", "3 horas"))
-            recyclerViewDataArrayList.add(RecyclerViewData("asignatura 2", "2 horas"))
-            recyclerViewDataArrayList.add(RecyclerViewData("asignatura 4", "5 horas"))
-            items.add(Teacher(R.mipmap.profile_pic_teacher_1_round, "David", "Jardon Peinado", recyclerViewDataArrayList))
-            items.add(Teacher(R.mipmap.profile_pic_teacher_2_round, "Pedro", "Camacho", recyclerViewDataArrayList))
-            items.add(Teacher(R.mipmap.profile_pic_teacher_4_round, "Jaime", "Lannister", recyclerViewDataArrayList))
-            items.add(Teacher(R.mipmap.profile_pic_teacher_5_round, "Carlos", "El de iOs", recyclerViewDataArrayList))
-            items.add(Teacher(R.mipmap.profile_pic_teacher_6_round, "Laura", "Nose", recyclerViewDataArrayList))
-            items.add(Teacher(R.mipmap.profile_pic_teacher_7_round, "Meritxel", "La de fol", recyclerViewDataArrayList))
+
         }
     }
 }

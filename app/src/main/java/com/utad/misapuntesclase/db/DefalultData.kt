@@ -8,7 +8,7 @@ import kotlin.collections.ArrayList
 
 // todo: do it
 
-    // ClassroomSubjects
+//     ClassroomSubjects
 var menuSYSPSubject: ArrayList<RecyclerViewData> = arrayListOf(
     RecyclerViewData("13", "Number of Alumns"),
     RecyclerViewData("Random teacher", "Teacher"),

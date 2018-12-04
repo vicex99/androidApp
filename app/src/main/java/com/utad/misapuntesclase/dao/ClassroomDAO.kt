@@ -13,14 +13,15 @@ interface ClassroomDAO {
     fun insert(classData: List<Subject>): LongArray
 
 
+    @Query("SELECT * from Subject ORDER BY name ASC")
+    fun getAll(): LiveData<List<Subject>>
+
+
     @Update
     fun update(classData: Subject): Int
 
 
     @Query("DELETE FROM Subject")
     fun deleteAll()
-
-    @Query("SELECT * from Subject ORDER BY name ASC")
-    fun getAllClass(): LiveData<List<Subject>>
 
 }

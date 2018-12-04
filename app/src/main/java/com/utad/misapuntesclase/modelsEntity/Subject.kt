@@ -8,7 +8,7 @@ class Subject(
     var imageID: Int,
     var name: String,
     var description: String,
-    var recyclerViewDataArrayList: ArrayList<RecyclerViewData>?
+    var recyclerViewDataArrayList: ArrayList<RecyclerViewData>
 ) {
     @PrimaryKey(autoGenerate = false)
     var id: Int? = null

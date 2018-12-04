@@ -25,8 +25,9 @@ public class UserData(
     var imgUser: Uri?,
     var gender: Gender?,
     var description: String?,
-    var email: String?,
-    var hobbies: Array<String>? ){
+    var email: String?
+//    var hobbies: Array<String>?
+){
 
     @PrimaryKey(autoGenerate = false)
     var id: Int? = null
@@ -40,7 +41,7 @@ public class UserData(
                 INSTANCE
                     ?: UserData(
                         "", "", "", null, 0, null, 0,
-                        null, null, Gender.female, null, null, null
+                        null, null, Gender.female, null, null
                     ).also { INSTANCE = it}
             }
         fun destroyInstance(){

@@ -13,6 +13,8 @@ interface CommunityDAO {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(classData: List<Community>): LongArray
 
+    @Query("SELECT * from community ORDER BY name ASC")
+    fun getAll(): LiveData<List<Community>>
 
     @Update
     fun update(classData: Community): Int
@@ -20,8 +22,5 @@ interface CommunityDAO {
 
     @Query("DELETE FROM community")
     fun deleteAll()
-
-    @Query("SELECT * from community ORDER BY name ASC")
-    fun getAllClass(): LiveData<List<Community>>
 
 }

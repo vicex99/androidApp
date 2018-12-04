@@ -9,7 +9,6 @@ import com.utad.misapuntesclase.dao.*
 import com.utad.misapuntesclase.modelsEntity.*
 import org.jetbrains.anko.doAsync
 import java.util.*
-import javax.security.auth.Subject
 
 @Database(entities = [Subject::class,
                     Community::class,
@@ -19,8 +18,10 @@ import javax.security.auth.Subject
                     UserData::class
                     ],
             version = 1)
-
-@TypeConverters(DateConverter::class, RecyclerViewConverter::class)
+@TypeConverters(DateConverter::class,
+    RecyclerViewConverter::class,
+    GenderConverter::class,
+    ImgUriConverter::class)
 abstract class AppDatabase: RoomDatabase() {
 
     abstract fun ClassroomDao(): ClassroomDAO
@@ -31,7 +32,6 @@ abstract class AppDatabase: RoomDatabase() {
 
     //TODO: do late
     abstract fun UserDAO(): UserDAO
-
 
     companion object {
         // Get DB name from constant configuration

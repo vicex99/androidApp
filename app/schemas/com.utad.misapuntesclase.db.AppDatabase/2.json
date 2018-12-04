@@ -1,48 +1,15 @@
 {
   "formatVersion": 1,
   "database": {
-    "version": 1,
-    "identityHash": "2573e4059bdb71f0e9a597ff5d065ad6",
+    "version": 2,
+    "identityHash": "6fb85341ffd31606ab2467cfcc5a20cd",
     "entities": [
       {
         "tableName": "Subject",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER, `imageID` INTEGER NOT NULL, `name` TEXT NOT NULL, `description` TEXT NOT NULL, `recyclerViewDataArrayList` TEXT NOT NULL, PRIMARY KEY(`id`))",
-        "fields": [
-          {
-            "fieldPath": "id",
-            "columnName": "id",
-            "affinity": "INTEGER",
-            "notNull": false
-          },
-          {
-            "fieldPath": "imageID",
-            "columnName": "imageID",
-            "affinity": "INTEGER",
-            "notNull": true
-          },
-          {
-            "fieldPath": "name",
-            "columnName": "name",
-            "affinity": "TEXT",
-            "notNull": true
-          },
-          {
-            "fieldPath": "description",
-            "columnName": "description",
-            "affinity": "TEXT",
-            "notNull": true
-          },
-          {
-            "fieldPath": "recyclerViewDataArrayList",
-            "columnName": "recyclerViewDataArrayList",
-            "affinity": "TEXT",
-            "notNull": true
-          }
-        ],
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` ()",
+        "fields": [],
         "primaryKey": {
-          "columnNames": [
-            "id"
-          ],
+          "columnNames": [],
           "autoGenerate": false
         },
         "indices": [],
@@ -226,7 +193,7 @@
       },
       {
         "tableName": "user",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER, `name` TEXT NOT NULL, `surname1` TEXT NOT NULL, `surname2` TEXT NOT NULL, `address` TEXT, `postalCode` INTEGER, `city` TEXT, `phone` INTEGER, `date` INTEGER, `imgUser` TEXT, `gender` TEXT, `description` TEXT, `email` TEXT, PRIMARY KEY(`id`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER, `name` TEXT NOT NULL, `surname1` TEXT NOT NULL, `surname2` TEXT NOT NULL, `address` TEXT, `postalCode` INTEGER, `city` TEXT, `phone` INTEGER, `date` INTEGER, `imgUser` TEXT, `gender` TEXT, `description` TEXT, `email` TEXT, `hobbies` TEXT, PRIMARY KEY(`id`))",
         "fields": [
           {
             "fieldPath": "id",
@@ -305,6 +272,12 @@
             "columnName": "email",
             "affinity": "TEXT",
             "notNull": false
+          },
+          {
+            "fieldPath": "hobbies",
+            "columnName": "hobbies",
+            "affinity": "TEXT",
+            "notNull": false
           }
         ],
         "primaryKey": {
@@ -319,7 +292,7 @@
     ],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"2573e4059bdb71f0e9a597ff5d065ad6\")"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"6fb85341ffd31606ab2467cfcc5a20cd\")"
     ]
   }
 }

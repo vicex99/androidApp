@@ -24,6 +24,7 @@ import com.utad.misapuntesclase.modelsEntity.UserData
 import com.utad.misapuntesclase.adapters.GradeAdapter
 import com.utad.misapuntesclase.modelsEntity.Community
 import com.utad.misapuntesclase.modelsEntity.Subject
+import com.utad.misapuntesclase.repository.BDRepository
 
 /**
  * donde se verán el menu desplegable y las listas
@@ -91,11 +92,19 @@ class MainActivity : AppCompatActivity(), SubjectAdapter.OnClickedItemListener, 
     private lateinit var imgUser: ImageView
 
     private lateinit var myUserData: UserData
+    private lateinit var repository: BDRepository
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        // Set serializable
+        myUserData = UserData.getInstance()
 
+        repository = BDRepository.getInstance(application)
+
+        // Comprove if the user had register after
+//        if(myUserData.name == null)
+//            toLog()
 
         // Again navigation drawer things
         dl = findViewById(R.id.activity_principal)
@@ -104,7 +113,7 @@ class MainActivity : AppCompatActivity(), SubjectAdapter.OnClickedItemListener, 
         t.syncState()
         nv = findViewById(R.id.nv)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.title= "Subjects"
+        supportActionBar?.title = "Subjects"
         if (findViewById<FrameLayout>(R.id.fragment_container) != null) {
 
             // However, if we're being restored from a previous state,
@@ -133,8 +142,7 @@ class MainActivity : AppCompatActivity(), SubjectAdapter.OnClickedItemListener, 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         MenuInflater(this).apply {
             this.inflate(R.menu.dots_menu, menu).apply {
-                // Set serializable
-                myUserData = UserData.getInstance()
+
                 // setDataNavHeader
                 name = findViewById(R.id.txtName)
                 surname = findViewById(R.id.txtSurname)
@@ -143,7 +151,6 @@ class MainActivity : AppCompatActivity(), SubjectAdapter.OnClickedItemListener, 
 
                 setData()
             }
-
         }
         return super.onCreateOptionsMenu(menu)
     }
@@ -239,5 +246,13 @@ class MainActivity : AppCompatActivity(), SubjectAdapter.OnClickedItemListener, 
         }
 
         return if (t.onOptionsItemSelected(item)) true else super.onOptionsItemSelected(item)
+    }
+
+    fun toLog() {
+
+        startActivity(
+            Intent(this, LoginActivity::class.java).apply {
+            flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        })
     }
 }

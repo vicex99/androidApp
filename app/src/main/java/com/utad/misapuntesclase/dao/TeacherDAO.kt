@@ -15,14 +15,14 @@ interface TeacherDAO {
     fun insert(classData: List<Teacher>): LongArray
 
 
+    @Query("SELECT * from Teacher ORDER BY name ASC")
+    fun getAll(): LiveData<List<Teacher>>
+
+
     @Update
     fun update(classData: Teacher): Int
 
-
     @Query("DELETE FROM Teacher")
     fun deleteAll()
-
-    @Query("SELECT * from Teacher ORDER BY name ASC")
-    fun getAllClass(): LiveData<List<Teacher>>
 
 }

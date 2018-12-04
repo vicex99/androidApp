@@ -8,21 +8,20 @@ import com.utad.misapuntesclase.modelsEntity.Notifications
 @Dao
 interface NotificationDAO {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertOne(classData: Notifications): Long
+    fun insert(classData: Notifications): Long
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(classData: List<Notifications>): LongArray
 
+    // para que salgan los ultimos antes se pone "DESC"
+    @Query("SELECT * from Notifications ORDER BY date DESC")
+    fun getAll(): LiveData<List<Notifications>>
+
 
     @Update
-    fun update(classData: Notification): Int
-
+    fun update(classData: Notifications): Int
 
     @Query("DELETE FROM Notifications")
     fun deleteAll()
-
-    // para que salgan los ultimos antes se pone "DESC"
-    @Query("SELECT * from Notifications ORDER BY date DESC")
-    fun getAllClass(): LiveData<List<Notification>>
 
 }

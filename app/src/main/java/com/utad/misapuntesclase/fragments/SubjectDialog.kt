@@ -16,6 +16,7 @@ import android.widget.TextView
 import com.utad.misapuntesclase.R
 import com.utad.misapuntesclase.adapters.DialogAdapter
 import com.utad.misapuntesclase.modelsEntity.RecyclerViewData
+import com.utad.misapuntesclase.repository.BDRepository
 
 class SubjectDialog : DialogFragment() {
     companion object {
@@ -30,6 +31,8 @@ class SubjectDialog : DialogFragment() {
     private lateinit var viewAdapter: RecyclerView.Adapter<*>
     private lateinit var viewManager: RecyclerView.LayoutManager
     private var items: ArrayList<RecyclerViewData> = ArrayList()
+
+    private lateinit var mRepo: BDRepository
 
     override fun onAttach(context: Context?) {
         super.onAttach(context)
