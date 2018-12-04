@@ -11,25 +11,23 @@ import java.util.*
 import com.google.gson.reflect.TypeToken
 
 
-
-
 //TODO: que te de un dao y te devuelva un recycle view
 
 object RecyclerViewConverter {
     @TypeConverter
     @ToJson
     @JvmStatic
-    fun toList(list: String): RecyclerViewData? {
-        val listType = object : TypeToken<ArrayList<RecyclerViewData>>() {
+    fun toList(list: String): List<RecyclerViewData>? {
+        val listType = object : TypeToken<RecyclerViewData>() {
 
         }.type
-        return Gson().fromJson(list, RecyclerViewData::class.java)
+        return Gson().fromJson<List<RecyclerViewData>>(list, RecyclerViewData::class.java)
     }
 
     @TypeConverter
     @FromJson
     @JvmStatic
-    fun toJSON(item: RecyclerViewData): String {
+    fun toJSON(item: List<RecyclerViewData>): String {
         return Gson().toJson(item, RecyclerViewData::class.java)
     }
 }
